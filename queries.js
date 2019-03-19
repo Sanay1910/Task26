@@ -2,6 +2,7 @@
 
 const { Client } = require('pg');
 
+
 const client = new Client({
   connectionString: "postgres://cwxubiblgpndeb:f902c4ee1c11e90effa8b8a1eee578cdc6972ad6ee9b486c458dc5dc5a4142f2@ec2-54-228-252-67.eu-west-1.compute.amazonaws.com:5432/ddodrdvhbpfs19",
   ssl: true,
@@ -13,7 +14,7 @@ client.connect();
 const getUsers = (req, res) => {
     client.query('SELECT * FROM _user ORDER BY user_id ASC', (error, results) => {
       if (error) {
-        throw error
+        throw error;
       }
       res.status(200).json(results.rows)
     })
@@ -26,7 +27,7 @@ const getUserId = (req, res) => {
     if (error) {
       throw error;
     }
-    res.status(200).json(results.row);
+    res.status(200).json(results.rows);
   }) 
 }
 
@@ -74,7 +75,7 @@ const getRestaurant = (req, res) => {
       if (error) {
         throw error;
       }
-      res.status(200).json(results.row);
+      res.status(200).json(results.rows);
     }) 
   }
 
@@ -135,16 +136,37 @@ const createReview = (req, res) => {
     )
   }
 
+  const getReviewRestaurantId = (req, res) => {
+    const id = parseInt(req.params.id)
+  
+    client.query('SELECT reviewText FROM review WHERE restaurant_id = $1', [id], (error, results) => {
+      if (error) {
+        throw error;
+      }
+      res.status(200).json(results.rows);
+    }) 
+  }
 
-
+  const getLastestReview = (req, res) => {
+      client.query('SELECT * FROM review ORDER BY updated_at DESC LIMIT 1', (error, results) => {
+          if(error) {
+              throw error;
+          }
+          res.status(200).json(results.rows)
+      })
+  }
 
 module.exports = {
     getUsers,
-  getUserId,
-  createUser,
-  updateUser,
-  getRestaurant,
-  updateRestaurant,
-  createReview,
-  updateReview
+    getUserId,
+    createUser,
+    updateUser,
+    getRestaurant,
+    getRestaurantById,
+    createRestaurant,
+    updateRestaurant,
+    createReview,
+    updateReview,
+    getReviewRestaurantId,
+    getLastestReview
 }

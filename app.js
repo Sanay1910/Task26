@@ -16,18 +16,19 @@ app.get('/', (request, response) => {
 })
 
 app.get('/user', db.getUsers)
-
 app.get('/user/:id', db.getUserId)
-
-
-
-app.post('/user', db.createUser)
-
-app.put('/user/:id', db.updateUser)
+app.post('/user/create', db.createUser)
+app.put('/user/update', db.updateUser)
 
 app.get('/restaurant', db.getRestaurant)
+app.get('/restaurant/:id', db.getRestaurantById)
+app.post('/restaurant/create', db.createRestaurant)
+app.put('/restaurant/update', db.updateRestaurant)
 
-app.get('/review', db.createReview)
+app.get('/review/create', db.createReview)
+app.put('/review/update', db.updateReview)
+app.get('/review/restaurant/:id', db.getReviewRestaurantId)
+app.get('/review/latest', db.getLastestReview)
 
 app.listen(port, () => {
   console.log(`App running on port ${port}.`)
