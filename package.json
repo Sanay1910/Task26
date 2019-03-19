@@ -4,19 +4,21 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "pg": "^7.9.0"
   },
   "variables": [
     {
       "id": "458c873e-9cb0-4310-a544-0a46979d70ac",
-			"key": "endpoint",
-			"value": "http://localhost",
-			"type": "string"
+      "key": "endpoint",
+      "value": "http://localhost",
+      "type": "string"
     }
   ]
 }
