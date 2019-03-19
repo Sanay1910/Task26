@@ -17,7 +17,7 @@
     {
       "id": "458c873e-9cb0-4310-a544-0a46979d70ac",
       "key": "endpoint",
-      "value": "http://localhost",
+      "value": "http://task26.herokuapp.com",
       "type": "string"
     }
   ]
