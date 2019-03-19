@@ -26,7 +26,7 @@ app.post('/restaurant/create', db.createRestaurant)
 app.put('/restaurant/update', db.updateRestaurant)
 
 app.get('/review', db.getReview)
-app.get('/review/create', db.createReview)
+app.post('/review/create', db.createReview)
 app.put('/review/update', db.updateReview)
 app.get('/review/restaurant/:id', db.getReviewRestaurantId)
 app.get('/review/latest', db.getLastestReview)
