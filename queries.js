@@ -107,6 +107,15 @@ const getRestaurant = (req, res) => {
   }
 
   //Review
+
+  const getReview = (req, res) => {
+    client.query('SELECT * FROM review ORDER BY review_id ASC', (error, results) => {
+      if (error) {
+        throw error
+      }
+      res.status(200).json(results.rows)
+    })
+  }
   
 const createReview = (req, res) => {
     const { rating, reviewText, user_id, restaurant_id } = req.body
@@ -166,6 +175,7 @@ module.exports = {
     createRestaurant,
     updateRestaurant,
     createReview,
+    getReview,
     updateReview,
     getReviewRestaurantId,
     getLastestReview
