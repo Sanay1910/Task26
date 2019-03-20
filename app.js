@@ -5,8 +5,10 @@ const db = require('./queries')
 const userQueries = require('./apis/userQueries')
 const restaurantQueries = require('./apis/restaurantQueries')
 const reviewQueries = require('./apis/reviewQueries')
+const cors = require('cors')
 const port = process.env.PORT || 3000;
 
+app.use(cors())
 app.use(bodyParser.json())
 app.use(
   bodyParser.urlencoded({
