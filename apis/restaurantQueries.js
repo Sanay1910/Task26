@@ -58,7 +58,7 @@ const getRestaurant = (req, res) => {
   }
 
   const getRestaurantByCategory = (req, res) => {
-    const category = req.body.category
+    const category = req.body.restaurant.category
 
     client.query('SELECT * FROM restaurant WHERE category = $1',[category], (error, results) => {
       if (error) {
@@ -69,7 +69,7 @@ const getRestaurant = (req, res) => {
   }
 
   const getRestaurantByName = (req, res) => {
-    const name = req.body.name
+    const name = req.body.restaurant.name
   
     client.query('SELECT * FROM restaurant WHERE name = $1',[name], (error, results) => {
       if (error) {
