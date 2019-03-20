@@ -58,9 +58,9 @@ const getRestaurant = (req, res) => {
   }
 
   const getRestaurantByCategory = (req, res) => {
-    const id = parseInt(req.params.id)
+    const category = req.params.category
   
-    client.query('SELECT * FROM restaurant WHERE category = $1', (error, results) => {
+    client.query('SELECT * FROM restaurant WHERE category = $1',[category], (error, results) => {
       if (error) {
         throw error;
       }
@@ -69,9 +69,9 @@ const getRestaurant = (req, res) => {
   }
 
   const getRestaurantByName = (req, res) => {
-    const id = parseInt(req.params.id)
+    const name = req.params.name
   
-    client.query('SELECT * FROM restaurant WHERE name = $1', (error, results) => {
+    client.query('SELECT * FROM restaurant WHERE name = $1',[name] (error, results) => {
       if (error) {
         throw error;
       }
