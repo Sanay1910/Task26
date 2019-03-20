@@ -1,0 +1,116 @@
+a:link, a:visited {
+  border-color: white;
+  border-radius: 12px;
+  color: white;
+  display: inline-block;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  background-color: #0091ea;
+  text-decoration: underline;
+}
+
+body {
+  background-image: url("background.jpg");
+  margin: 0;
+  max-width: 90%;
+  padding: 15px;
+}
+
+button {
+  border-radius: 9px;
+}
+
+h1, h2, p, ul, li {
+  color: white;
+  font-family: "Calibri";
+}
+
+input {
+  border: 2px solid white;
+  border-radius: 5px;
+  font-family: "Calibri";
+  margin-top: 3px;
+  transition: width 0.6s ease-in-out;
+  -webkit-transition: width 0.6s ease-in-out;
+  width: 280px;
+}
+
+input:focus {
+  width: 90%;
+}
+
+td {
+  padding-right: 30px;
+}
+
+ul.header {
+  background-color: #0277bd;
+  padding: 0;
+  border: 2px solid white;
+}
+
+ul.header li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+}
+
+ul.header li a {
+  color: white;
+  display: inline-block;
+  font-weight: bold;
+  padding: 20px;
+  text-decoration: none;
+}
+
+.active {
+  background-color: #0091ea;
+}
+
+.buttonstotheright {
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.content {
+  background-color: #0277bd;
+  border: 2px solid white;
+  border-radius: 12px;
+  margin-left: 22%;
+  opacity: 0.9;
+  padding: 0;
+  width: 60%;
+}
+
+.header {
+  border: 2px solid white;
+  border-radius: 12px;
+  margin-left: 22%;
+  margin-top: 0%;
+  opacity: 0.9;
+  width: 60%;
+}
+
+.loginregisterbuttons {
+  margin-left: 220px;
+  margin-top: 5px;
+}
+
+.paddedcontent {
+  margin-left: 5%;
+}
+
+.tab {
+  padding-right: 5px;
+}
+
+.title h1 {
+  font-size: 65px;
+  margin-left: 50px;
+  opacity: 0.85;
+  text-align: center;
+}
