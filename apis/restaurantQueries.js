@@ -71,7 +71,7 @@ const getRestaurant = (req, res) => {
   const getRestaurantByName = (req, res) => {
     const name = req.params.name
   
-    client.query('SELECT * FROM restaurant WHERE name = $1',[name] (error, results) => {
+    client.query('SELECT * FROM restaurant WHERE name = $1',[name], (error, results) => {
       if (error) {
         throw error;
       }
