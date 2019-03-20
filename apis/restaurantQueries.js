@@ -33,7 +33,7 @@ const getRestaurant = (req, res) => {
   const createRestaurant = (req, res) => {
     const { name, address, category, description, user_id } = req.body
   
-    client.query('INSERT INTO _user (name, address, category, description, user_id) VALUES ($1, $2, $3, $4, $5)', [name, address, category, description, user_id ], (error, results) => {
+    client.query('INSERT INTO restaurant (name, address, category, description, user_id) VALUES ($1, $2, $3, $4, $5)', [name, address, category, description, user_id ], (error, results) => {
       if (error) {
         throw error;
       }
@@ -46,7 +46,7 @@ const getRestaurant = (req, res) => {
     const { name, address, category, description, user_id} = req.body
   
     client.query(
-      'UPDATE _user SET name = $1, address=$2, category= $3, description = $4, user_id=$5', 
+      'UPDATE restaurant SET name = $1, address=$2, category= $3, description = $4, user_id=$5', 
       [ name, address, category, description, user_id],
       (error, results) => {
         if(error) {
