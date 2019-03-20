@@ -29,6 +29,8 @@ app.get('/restaurant', restaurantQueries.getRestaurant)
 app.get('/restaurant/:id', restaurantQueries.getRestaurantById)
 app.post('/restaurant/create', restaurantQueries.createRestaurant)
 app.put('/restaurant/update', restaurantQueries.updateRestaurant)
+app.get('/restaurant/:category', restaurantQueries.getRestaurantByCategory)
+app.get('/restaurant/:name', restaurantQueries.getRestaurantByName)
 
 app.get('/review', reviewQueries.getReview)
 app.post('/review/create', reviewQueries.createReview)
