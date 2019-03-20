@@ -56,9 +56,33 @@ const getRestaurant = (req, res) => {
       }
     )
   }
+
+  const getRestaurantByCategory = (req, res) => {
+    const id = parseInt(req.params.id)
+  
+    client.query('SELECT * FROM restaurant WHERE category = $1', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      res.status(200).json(results.row);
+    }) 
+  }
+
+  const getRestaurantByName = (req, res) => {
+    const id = parseInt(req.params.id)
+  
+    client.query('SELECT * FROM restaurant WHERE name = $1', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      res.status(200).json(results.row);
+    }) 
+  }
   module.exports = {
       getRestaurant,
       getRestaurantById,
       createRestaurant,
-      updateRestaurant
+      updateRestaurant,
+      getRestaurantByCategory,
+      getRestaurantByName
   }
