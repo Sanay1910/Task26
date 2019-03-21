@@ -42,12 +42,12 @@ const createUser = (req, res) => {
 }
 
 const updateUser = (req, res) => {
-  const id = parseInt(req.params.id)
+  const user_id = parseInt(req.params.user_id)
   const {username, email, password, role} = req.body
 
   client.query(
-    'UPDATE _user SET username = $1, email=$2, password= $3, role = $4', 
-    [username, email, password, role],
+    'UPDATE _user SET username = $1, email=$2, password= $3, role = $4 WHERE user_id=$5', 
+    [username, email, password, role, user_id],
     (error, results) => {
       if(error) {
         throw error;

@@ -31,12 +31,12 @@ const createReview = (req, res) => {
 
   
   const updateReview = (req, res) => {
-    const id = parseInt(req.params.id)
+    const review_id = parseInt(req.params.review_id)
     const {  rating, reviewText, user_id, restaurant_id } = req.body
   
     client.query(
-      'UPDATE review SET rating = $1, review=$2, user_id= $3, restaurant_id = $4', 
-      [ rating, reviewText, user_id, restaurant_id],
+      'UPDATE review SET rating = $1, review=$2, user_id= $3, restaurant_id = $4 WHERE review_id=$5', 
+      [ rating, reviewText, user_id, restaurant_id, review_id],
       (error, results) => {
         if(error) {
           throw error;
