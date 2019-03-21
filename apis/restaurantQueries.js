@@ -42,9 +42,8 @@ const getRestaurant = (req, res) => {
   }
 
   const updateRestaurant = (req, res) => {
-    const restaurant_id = parseInt(req.params.restaurant_id)
-    const user_id = parseInt(req.params.user_id)
-    const { name, address, category, description} = req.body
+    //const restaurant_id = parseInt(req.params.restaurant_id)
+    const { name, address, category, description, user_id, restaurant_id} = req.body
   
     client.query(
       'UPDATE restaurant SET name = $1, address=$2, category= $3, description = $4, user_id=$5 WHERE restaurant_id=$6', 
