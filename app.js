@@ -23,18 +23,18 @@ app.get('/', (request, response) => {
 app.get('/user', userQueries.getUsers)
 app.get('/user/:id', userQueries.getUserId)
 app.post('/user/create', userQueries.createUser)
-app.put('/user/update', userQueries.updateUser)
+app.post('/user/update', userQueries.updateUser)
 
 app.get('/restaurant', restaurantQueries.getRestaurant)
 app.get('/restaurant/:id', restaurantQueries.getRestaurantById)
 app.post('/restaurant/create', restaurantQueries.createRestaurant)
-app.put('/restaurant/update', restaurantQueries.updateRestaurant)
+app.post('/restaurant/update', restaurantQueries.updateRestaurant)
 app.get('/restaurant/category/:category', restaurantQueries.getRestaurantByCategory)
 app.get('/restaurant/name/:name', restaurantQueries.getRestaurantByName)
 
 app.get('/review', reviewQueries.getReview)
 app.post('/review/create', reviewQueries.createReview)
-app.put('/review/update', reviewQueries.updateReview)
+app.post('/review/update', reviewQueries.updateReview)
 app.get('/review/restaurant/:id', reviewQueries.getReviewRestaurantId)
 app.get('/review/latest', reviewQueries.getLastestReview)
 
